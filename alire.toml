@@ -7,4 +7,4 @@ licenses = "Apache-2.0"
 
 maintainers = ["Paul Jarrett <jarrett.paul.young@gmail.com>"]
 maintainers-logins = ["pyjarrett"]
-tags = ["progress"]
+tags = ["command-line", "progress"]
