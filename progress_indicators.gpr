@@ -1,3 +1,7 @@
+-- begin auto-gpr-with --
+--  This section was automatically added by Alire
+with "ansi.gpr";
+-- end auto-gpr-with --
 project Progress_Indicators is
 
    for Library_Name use "Progress_Indicators";

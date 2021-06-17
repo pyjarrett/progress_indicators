@@ -8,3 +8,6 @@ licenses = "Apache-2.0"
 maintainers = ["Paul Jarrett <jarrett.paul.young@gmail.com>"]
 maintainers-logins = ["pyjarrett"]
 tags = ["command-line", "progress"]
+
+[[depends-on]]  # This line was added by `alr with`
+ansiada = "~0.1.0"  # This line was added by `alr with`

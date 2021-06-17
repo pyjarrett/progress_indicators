@@ -1,11 +1,27 @@
+with ANSI;
+
 package body Progress_Indicators.Spinners is
 
-    function Make (Ticks_Per_Move : Positive) return Spinner is
+    function Make (Ticks_Per_Move : Positive; Style : Spinner_Style := In_Place) return Spinner is
     begin
-        return (Ticks_Per_Move => Ticks_Per_Move, Ticks => 0, State => 0);
+        return (Ticks_Per_Move => Ticks_Per_Move, Ticks => 0, State => 0, Style => Style);
     end Make;
 
-    function Value (S : Spinner) return Character is (Spinner_States (S.State));
+    function Value (S : Spinner) return String is
+    begin
+        if not Spinners_Enabled then
+            return "";
+        end if;
+
+        case S.Style is
+            when Empty =>
+                return "";
+            when In_Place =>
+                return Spinner_States (S.State) & ANSI.Back;
+            when Normal =>
+                return "" & Spinner_States (S.State);
+        end case;
+    end Value;
 
     procedure Tick (S : in out Spinner) is
     begin
@@ -14,5 +30,15 @@ package body Progress_Indicators.Spinners is
             S.State := S.State + 1;
         end if;
     end Tick;
+
+    procedure Enable_All is
+    begin
+        Spinners_Enabled := True;
+    end Enable_All;
+
+    procedure Disable_All is
+    begin
+        Spinners_Enabled := False;
+    end Disable_All;
 
 end Progress_Indicators.Spinners;
