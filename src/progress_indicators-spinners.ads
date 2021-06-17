@@ -16,7 +16,7 @@ package Progress_Indicators.Spinners is
     --
     -- Normal just returns the next moving bar.
 
-    function Make (Ticks_Per_Move : Positive; Style : Spinner_Style := In_Place) return Spinner;
+    function Make (Style : Spinner_Style := In_Place; Ticks_Per_Move : Positive := 1) return Spinner;
     -- Makes a new spinner which goes to the next element every given number of
     -- ticks, allowing you to vary spin rate.
     --

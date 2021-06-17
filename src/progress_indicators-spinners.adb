@@ -2,7 +2,7 @@ with ANSI;
 
 package body Progress_Indicators.Spinners is
 
-    function Make (Ticks_Per_Move : Positive; Style : Spinner_Style := In_Place) return Spinner is
+    function Make (Style : Spinner_Style := In_Place; Ticks_Per_Move : Positive := 1) return Spinner is
     begin
         return (Ticks_Per_Move => Ticks_Per_Move, Ticks => 0, State => 0, Style => Style);
     end Make;
