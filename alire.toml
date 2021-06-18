@@ -12,7 +12,5 @@ tags = ["command-line", "console", "terminal", "progress"]
 project-files = ["progress_indicators.gpr", "progress_indicators_tests.gpr"]
 executables = ["progress_indicators_test"]
 
-configuration.disabled = true
-
 [[depends-on]]  # This line was added by `alr with`
 ansiada = "~0.1.0"  # This line was added by `alr with`
