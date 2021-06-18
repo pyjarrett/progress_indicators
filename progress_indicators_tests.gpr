@@ -1,0 +1,27 @@
+with "progress_indicators";
+
+project Progress_Indicators_Tests is
+
+   for Languages use ("Ada");
+
+   for Create_Missing_Dirs use "True";
+
+   for Object_Dir  use "tests/build/obj";
+   for Exec_Dir use "tests/build/bin";
+
+   for Source_Dirs use ("tests/src");
+
+   Executables := (
+      "test"
+   );
+
+   for Main use Executables;
+
+   package Builder is
+      for Executable ("test") use "progress_indicators_test";
+   end Builder;
+
+   package Compiler renames Progress_Indicators.Compiler;
+   package Binder renames Progress_Indicators.Binder;
+
+end Progress_Indicators_Tests;

@@ -8,7 +8,7 @@ crate = "ansiada"
 fulfilment = "solved"
 pinned = false
 transitivity = "direct"
-versions = "*"
+versions = "~0.1.0"
 [solution.state.release]
 description = "Comprehensive ANSI control sequences for terminal output"
 executables = [
