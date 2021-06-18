@@ -24,10 +24,9 @@ package body Progress_Indicators.Bars is
         use Ada.Strings.Fixed;
         use ANSI;
 
-        Used : constant Natural := Natural (Float (Width) / 100.0 * Float (Value));
+        Used      : constant Natural := Natural (Float (Width) / 100.0 * Float (Value));
         Remaining : constant Natural := Width - Used;
-
-        Text : constant String := Tail (Value'Image & "%", 5);
+        Text      : constant String  := Tail (Value'Image & "%", 5);
     begin
         return
           Foreground (Light_Green) & Used * "█" & Foreground (Default) & Remaining * "░" & Text &
