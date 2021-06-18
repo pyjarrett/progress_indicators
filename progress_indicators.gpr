@@ -1,16 +1,14 @@
--- begin auto-gpr-with --
---  This section was automatically added by Alire
 with "ansi.gpr";
--- end auto-gpr-with --
+
 project Progress_Indicators is
 
    for Library_Name use "Progress_Indicators";
    for Library_Version use "0.0.0";
 
    for Source_Dirs use ("src");
-   for Object_Dir use "obj";
+   for Object_Dir use "build/obj";
    for Create_Missing_Dirs use "True";
-   for Library_Dir use "lib";
+   for Library_Dir use "build/lib";
 
    type Library_Type_Type is ("relocatable", "static", "static-pic");
    Library_Type : Library_Type_Type :=
@@ -48,9 +46,10 @@ project Progress_Indicators is
    case Style_Checks is
       when "enabled" =>
          Style_Checks_Switches :=
-           (--"-gnatyg",   -- GNAT Style checks
+           ("-gnatyg",   -- GNAT Style checks
+            "-gnaty4C",  -- 4 space indentation and 1 space comments
             "-gnaty-d",  -- Disable no DOS line terminators
-            --"-gnatyM80", -- Maximum line length
+            "-gnatyM105", -- Maximum line length
             "-gnatyO");  -- Overriding subprograms explicitly marked as such
       when others => null;
    end case;
