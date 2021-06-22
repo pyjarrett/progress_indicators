@@ -3,7 +3,7 @@ with "ansi.gpr";
 project Progress_Indicators is
 
    for Library_Name use "Progress_Indicators";
-   for Library_Version use "0.0.0";
+   for Library_Version use "0.0.1";
 
    for Source_Dirs use ("src");
    for Object_Dir use "build/obj";
