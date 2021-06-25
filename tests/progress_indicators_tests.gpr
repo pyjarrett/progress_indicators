@@ -1,4 +1,4 @@
-with "progress_indicators";
+with "../progress_indicators";
 
 project Progress_Indicators_Tests is
 
@@ -6,10 +6,10 @@ project Progress_Indicators_Tests is
 
    for Create_Missing_Dirs use "True";
 
-   for Object_Dir  use "tests/build/obj";
-   for Exec_Dir use "tests/build/bin";
+   for Object_Dir  use "build/obj";
+   for Exec_Dir use "build/bin";
 
-   for Source_Dirs use ("tests/src");
+   for Source_Dirs use ("src");
 
    Executables := (
       "test"
