@@ -1,0 +1,18 @@
+name = "progress_indicators_tests"
+description = "Examples displaying progress in command line tools."
+version = "0.0.1"
+website = "https://github.com/pyjarrett/progress_indicators"
+authors = ["the progress_indicators authors"]
+licenses = "Apache-2.0"
+
+maintainers = ["Paul Jarrett <jarrett.paul.young@gmail.com>"]
+maintainers-logins = ["pyjarrett"]
+tags = ["command-line", "console", "terminal", "progress"]
+
+executables = ["progress_indicators_test"]
+
+[[depends-on]]
+progress_indicators = "~0.0.1"
+
+[[pins]]
+progress_indicators = { path = ".." }
