@@ -14,7 +14,7 @@
 --  See the License for the specific language governing permissions and
 --  limitations under the License.
 
-with ANSI;
+with AnsiAda;
 
 package body Progress_Indicators.Spinners is
 
@@ -33,7 +33,7 @@ package body Progress_Indicators.Spinners is
             when Empty =>
                 return "";
             when In_Place =>
-                return Spinner_States (S.State) & ANSI.Back;
+                return Spinner_States (S.State) & AnsiAda.Back;
             when Normal =>
                 return "" & Spinner_States (S.State);
         end case;

@@ -14,7 +14,7 @@
 --  See the License for the specific language governing permissions and
 --  limitations under the License.
 
-with ANSI;
+with AnsiAda;
 
 with Ada.Strings.Fixed;
 
@@ -22,15 +22,15 @@ package body Progress_Indicators.Bars is
 
     function Get_Bar (Value : Percentage; Width : Natural := 100) return String is
         use Ada.Strings.Fixed;
-        use ANSI;
+        use ANSIAda;
 
         Used      : constant Natural := Natural (Float (Width) / 100.0 * Float (Value));
         Remaining : constant Natural := Width - Used;
         Text      : constant String  := Tail (Value'Image & "%", 5);
     begin
         return
-          Foreground (Light_Green) & Used * "█" & Foreground (Default) & Remaining * "░" & Text &
-          ANSI.Back (Cells => Width + Text'Length);
+          Foreground (Light_Green) & Used * "*" & Foreground (Default) & Remaining * "_" & Text &
+          AnsiAda.Back (Cells => Width + Text'Length);
     end Get_Bar;
 
 end Progress_Indicators.Bars;
