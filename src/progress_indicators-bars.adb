@@ -28,6 +28,10 @@ package body Progress_Indicators.Bars is
         Remaining : constant Natural := Width - Used;
         Text      : constant String  := Tail (Value'Image & "%", 5);
     begin
+        -- This used to use the neat symbols █ and ░.  Alire change the way it
+        -- handles UTF-8 in strings so we can't use as easily anymore as it
+        -- seeps into the UTF-8 settings of other projects.
+        -- https://alire.ada.dev/docs/unicode.html
         return
           Foreground (Light_Green) & Used * '#'
           & Foreground (Default) & Remaining * '.'
