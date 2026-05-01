@@ -22,14 +22,16 @@ package body Progress_Indicators.Bars is
 
     function Get_Bar (Value : Percentage; Width : Natural := 100) return String is
         use Ada.Strings.Fixed;
-        use ANSIAda;
+        use AnsiAda;
 
         Used      : constant Natural := Natural (Float (Width) / 100.0 * Float (Value));
         Remaining : constant Natural := Width - Used;
         Text      : constant String  := Tail (Value'Image & "%", 5);
     begin
         return
-          Foreground (Light_Green) & Used * "*" & Foreground (Default) & Remaining * "_" & Text &
+          Foreground (Light_Green) & Used * '#'
+          & Foreground (Default) & Remaining * '.'
+          & Text &
           AnsiAda.Back (Cells => Width + Text'Length);
     end Get_Bar;
 
